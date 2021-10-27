@@ -14,8 +14,9 @@ namespace VidTrack.Data
         public static string InsertAccount(Account account)
         {
             string message;
-            
-            string conString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\Data\\Database.mdf;Integrated Security=True";
+
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\wammy\source\repos\VidTrack\VidTrack\Data\Database.mdf;Integrated Security=True";
+            // string conString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\wammy\\source\repos\\VidTrack\\VidTrack\\Data\\Database.mdf;Integrated Security=True";
             //                 "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\wammy\\source\repos\\VidTrack\\VidTrack\\Data\\Database.mdf;Integrated Security=True";
             SqlConnection connection = new SqlConnection(conString);
             SqlCommand command;
