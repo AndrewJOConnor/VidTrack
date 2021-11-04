@@ -72,5 +72,22 @@ namespace VidTrack
             }
             
         }
+
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            string username = txtLogInUsername.Text;
+            string password = txtLogInPassword.Text;
+            if (AccountDB.VerifyPassword(username, password))
+            {
+                var vidListWindow = new Forms.VideoListForm();
+                vidListWindow.CurrentUser = username;
+                vidListWindow.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect username or password.");
+            }
+        }
     }
 }

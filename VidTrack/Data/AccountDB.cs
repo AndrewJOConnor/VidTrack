@@ -11,13 +11,13 @@ namespace VidTrack.Data
 {
     class AccountDB
     {
+
+        //---- ADD ACCOUNT ----------------------------------------------------------------------------------------------------------------------------------------------------------------
         public static string InsertAccount(Account account)
         {
             string message;
 
             string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\wammy\source\repos\VidTrack\VidTrack\Data\Database.mdf;Integrated Security=True";
-            // string conString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\wammy\\source\repos\\VidTrack\\VidTrack\\Data\\Database.mdf;Integrated Security=True";
-            //                 "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\wammy\\source\repos\\VidTrack\\VidTrack\\Data\\Database.mdf;Integrated Security=True";
             SqlConnection connection = new SqlConnection(conString);
             SqlCommand command;
 
@@ -53,5 +53,56 @@ namespace VidTrack.Data
                 connection.Close();
             }
         }
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+        //---- VERIFY PASSWORD ------------------------------------------------------------------------------------------------------------------------------------------------------------
+        public static bool VerifyPassword(string username, string password)
+        {
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\wammy\source\repos\VidTrack\VidTrack\Data\Database.mdf;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(conString);
+            SqlCommand command;
+
+            string sqlStatement = "SELECT * FROM Accounts WHERE username = @username AND password = @password";
+
+            try
+            {
+                connection.Open();
+                command = new SqlCommand(sqlStatement, connection);
+                command.Parameters.AddWithValue("@username", username);
+                command.Parameters.AddWithValue("@password", password);
+
+
+                command.CommandType = CommandType.Text;
+
+                var result = command.ExecuteScalar();
+
+                if (result != null)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (SqlException SqlError)
+            {
+                throw SqlError;
+            }
+            catch (Exception error)
+            {
+                throw error;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
     }
 }
