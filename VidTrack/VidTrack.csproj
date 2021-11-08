@@ -72,6 +72,7 @@
       <DependentUpon>DatabaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Data\AccountDB.cs" />
+    <Compile Include="Data\VideoDB.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
