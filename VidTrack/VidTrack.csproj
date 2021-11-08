@@ -79,6 +79,12 @@
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\VideoDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\VideoDetails.Designer.cs">
+      <DependentUpon>VideoDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\VideoListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\VideoDetails.resx">
+      <DependentUpon>VideoDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\VideoListForm.resx">
       <DependentUpon>VideoListForm.cs</DependentUpon>

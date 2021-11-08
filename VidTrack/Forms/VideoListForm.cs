@@ -15,7 +15,6 @@ namespace VidTrack.Forms
     public partial class VideoListForm : Form
     {
         public string CurrentUser { get; set; }
-        public string UserIDString { get; set; }
         public int UserID { get; set; }
 
         public VideoListForm()
@@ -35,22 +34,19 @@ namespace VidTrack.Forms
             this.videosTableAdapter.FillByUserID(this.databaseDataSet.Videos, UserID);
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnNewVideo_Click(object sender, EventArgs e)
         {
+            var newVidWindow = new Forms.VideoDetails();
+            newVidWindow.UserID = UserID;
+            newVidWindow.ShowDialog();
+            this.videosTableAdapter.FillByUserID(this.databaseDataSet.Videos, UserID);
         }
 
-        private void fillByUserIDToolStripButton_Click(object sender, EventArgs e)
+        private void btnLogOut_Click(object sender, EventArgs e)
         {
-            /*
-            try
-            {
-                this.videosTableAdapter.FillByUserID(this.databaseDataSet.Videos, ((int)(System.Convert.ChangeType(accountIDToolStripTextBox.Text, typeof(int)))));
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-            */
+            Form logInWindow = new Form1();
+            logInWindow.Show();
+            this.Close();
         }
     }
 }

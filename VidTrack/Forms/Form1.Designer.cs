@@ -253,7 +253,7 @@ namespace VidTrack
             this.Controls.Add(this.pnlLogIn);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Welcome!";
             this.pnlLogIn.ResumeLayout(false);
             this.pnlLogIn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();

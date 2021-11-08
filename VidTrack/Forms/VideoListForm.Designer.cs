@@ -33,13 +33,6 @@ namespace VidTrack.Forms
             this.lblWelcome = new System.Windows.Forms.Label();
             this.lstVideos = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.videosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet = new VidTrack.DatabaseDataSet();
-            this.videosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.videosTableAdapter = new VidTrack.DatabaseDataSetTableAdapters.VideosTableAdapter();
-            this.accountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accountsTableAdapter = new VidTrack.DatabaseDataSetTableAdapters.AccountsTableAdapter();
-            this.accountsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.episodeNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.recordedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +40,16 @@ namespace VidTrack.Forms
             this.renderedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thumbnailMadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uploadedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.videosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new VidTrack.DatabaseDataSet();
+            this.videosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.videosTableAdapter = new VidTrack.DatabaseDataSetTableAdapters.VideosTableAdapter();
+            this.accountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.accountsTableAdapter = new VidTrack.DatabaseDataSetTableAdapters.AccountsTableAdapter();
+            this.accountsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnNewVideo = new System.Windows.Forms.Button();
+            this.btnEditVideo = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
@@ -70,7 +73,7 @@ namespace VidTrack.Forms
             this.lstVideos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstVideos.FormattingEnabled = true;
             this.lstVideos.ItemHeight = 20;
-            this.lstVideos.Location = new System.Drawing.Point(21, 500);
+            this.lstVideos.Location = new System.Drawing.Point(19, 611);
             this.lstVideos.Name = "lstVideos";
             this.lstVideos.ScrollAlwaysVisible = true;
             this.lstVideos.Size = new System.Drawing.Size(800, 304);
@@ -95,48 +98,14 @@ namespace VidTrack.Forms
             this.uploadedDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.videosBindingSource1;
             this.dataGridView1.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 100);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 115);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(789, 350);
+            this.dataGridView1.Size = new System.Drawing.Size(793, 350);
             this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // videosBindingSource1
-            // 
-            this.videosBindingSource1.DataMember = "Videos";
-            this.videosBindingSource1.DataSource = this.databaseDataSet;
-            // 
-            // databaseDataSet
-            // 
-            this.databaseDataSet.DataSetName = "DatabaseDataSet";
-            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // videosBindingSource
-            // 
-            this.videosBindingSource.DataMember = "Videos";
-            this.videosBindingSource.DataSource = this.databaseDataSet;
-            // 
-            // videosTableAdapter
-            // 
-            this.videosTableAdapter.ClearBeforeFill = true;
-            // 
-            // accountsBindingSource
-            // 
-            this.accountsBindingSource.DataMember = "Accounts";
-            this.accountsBindingSource.DataSource = this.databaseDataSet;
-            // 
-            // accountsTableAdapter
-            // 
-            this.accountsTableAdapter.ClearBeforeFill = true;
-            // 
-            // accountsBindingSource1
-            // 
-            this.accountsBindingSource1.DataMember = "Accounts";
-            this.accountsBindingSource1.DataSource = this.databaseDataSet;
             // 
             // titleDataGridViewTextBoxColumn
             // 
@@ -188,17 +157,82 @@ namespace VidTrack.Forms
             this.uploadedDataGridViewTextBoxColumn.Name = "uploadedDataGridViewTextBoxColumn";
             this.uploadedDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // videosBindingSource1
+            // 
+            this.videosBindingSource1.DataMember = "Videos";
+            this.videosBindingSource1.DataSource = this.databaseDataSet;
+            // 
+            // databaseDataSet
+            // 
+            this.databaseDataSet.DataSetName = "DatabaseDataSet";
+            this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // videosBindingSource
+            // 
+            this.videosBindingSource.DataMember = "Videos";
+            this.videosBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // videosTableAdapter
+            // 
+            this.videosTableAdapter.ClearBeforeFill = true;
+            // 
+            // accountsBindingSource
+            // 
+            this.accountsBindingSource.DataMember = "Accounts";
+            this.accountsBindingSource.DataSource = this.databaseDataSet;
+            // 
+            // accountsTableAdapter
+            // 
+            this.accountsTableAdapter.ClearBeforeFill = true;
+            // 
+            // accountsBindingSource1
+            // 
+            this.accountsBindingSource1.DataMember = "Accounts";
+            this.accountsBindingSource1.DataSource = this.databaseDataSet;
+            // 
+            // btnNewVideo
+            // 
+            this.btnNewVideo.Location = new System.Drawing.Point(728, 480);
+            this.btnNewVideo.Name = "btnNewVideo";
+            this.btnNewVideo.Size = new System.Drawing.Size(91, 26);
+            this.btnNewVideo.TabIndex = 3;
+            this.btnNewVideo.Text = "New...";
+            this.btnNewVideo.UseVisualStyleBackColor = true;
+            this.btnNewVideo.Click += new System.EventHandler(this.btnNewVideo_Click);
+            // 
+            // btnEditVideo
+            // 
+            this.btnEditVideo.Location = new System.Drawing.Point(623, 480);
+            this.btnEditVideo.Name = "btnEditVideo";
+            this.btnEditVideo.Size = new System.Drawing.Size(91, 26);
+            this.btnEditVideo.TabIndex = 4;
+            this.btnEditVideo.Text = "Edit...";
+            this.btnEditVideo.UseVisualStyleBackColor = true;
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.Location = new System.Drawing.Point(26, 480);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(91, 26);
+            this.btnLogOut.TabIndex = 5;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = true;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
             // VideoListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 486);
+            this.ClientSize = new System.Drawing.Size(844, 535);
+            this.Controls.Add(this.btnLogOut);
+            this.Controls.Add(this.btnEditVideo);
+            this.Controls.Add(this.btnNewVideo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.lstVideos);
             this.Controls.Add(this.lblWelcome);
             this.Name = "VideoListForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "VideoListForm";
+            this.Text = "My Videos";
             this.Load += new System.EventHandler(this.VideoListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.videosBindingSource1)).EndInit();
@@ -230,5 +264,8 @@ namespace VidTrack.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn renderedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn thumbnailMadeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uploadedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnNewVideo;
+        private System.Windows.Forms.Button btnEditVideo;
+        private System.Windows.Forms.Button btnLogOut;
     }
 }
