@@ -24,7 +24,7 @@ namespace VidTrack.Forms
 
         private void VideoListForm_Load(object sender, EventArgs e)
         {
-            lblWelcome.Text = "Welcome, " + CurrentUser;
+            lblWelcome.Text = "Welcome, " + CurrentUser + "!";
             UserID = AccountDB.GetUserIDByName(CurrentUser);
 
             // TODO: This line of code loads data into the 'databaseDataSet.Accounts' table. You can move, or remove it, as needed.

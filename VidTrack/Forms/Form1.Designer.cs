@@ -73,7 +73,7 @@ namespace VidTrack
             this.pnlLogIn.Controls.Add(this.txtLogInUsername);
             this.pnlLogIn.Controls.Add(this.label2);
             this.pnlLogIn.Controls.Add(this.label1);
-            this.pnlLogIn.Location = new System.Drawing.Point(12, 12);
+            this.pnlLogIn.Location = new System.Drawing.Point(-449, 12);
             this.pnlLogIn.Name = "pnlLogIn";
             this.pnlLogIn.Size = new System.Drawing.Size(981, 426);
             this.pnlLogIn.TabIndex = 0;
@@ -90,7 +90,8 @@ namespace VidTrack
             // 
             // txtNewEmail
             // 
-            this.txtNewEmail.Location = new System.Drawing.Point(622, 292);
+            this.txtNewEmail.Location = new System.Drawing.Point(622, 287);
+            this.txtNewEmail.MaxLength = 100;
             this.txtNewEmail.Name = "txtNewEmail";
             this.txtNewEmail.Size = new System.Drawing.Size(193, 20);
             this.txtNewEmail.TabIndex = 22;
@@ -98,7 +99,7 @@ namespace VidTrack
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(619, 276);
+            this.label8.Location = new System.Drawing.Point(619, 271);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 13);
             this.label8.TabIndex = 25;
@@ -107,6 +108,7 @@ namespace VidTrack
             // txtConfirmPassword
             // 
             this.txtConfirmPassword.Location = new System.Drawing.Point(622, 223);
+            this.txtConfirmPassword.MaxLength = 50;
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '•';
             this.txtConfirmPassword.Size = new System.Drawing.Size(193, 20);
@@ -145,6 +147,7 @@ namespace VidTrack
             // txtNewPassword
             // 
             this.txtNewPassword.Location = new System.Drawing.Point(622, 171);
+            this.txtNewPassword.MaxLength = 50;
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '•';
             this.txtNewPassword.Size = new System.Drawing.Size(193, 20);
@@ -154,6 +157,7 @@ namespace VidTrack
             // txtNewUsername
             // 
             this.txtNewUsername.Location = new System.Drawing.Point(622, 122);
+            this.txtNewUsername.MaxLength = 40;
             this.txtNewUsername.Name = "txtNewUsername";
             this.txtNewUsername.Size = new System.Drawing.Size(193, 20);
             this.txtNewUsername.TabIndex = 19;
@@ -209,6 +213,7 @@ namespace VidTrack
             // txtLogInPassword
             // 
             this.txtLogInPassword.Location = new System.Drawing.Point(161, 205);
+            this.txtLogInPassword.MaxLength = 50;
             this.txtLogInPassword.Name = "txtLogInPassword";
             this.txtLogInPassword.PasswordChar = '•';
             this.txtLogInPassword.Size = new System.Drawing.Size(193, 20);
@@ -218,6 +223,7 @@ namespace VidTrack
             // txtLogInUsername
             // 
             this.txtLogInUsername.Location = new System.Drawing.Point(161, 156);
+            this.txtLogInUsername.MaxLength = 40;
             this.txtLogInUsername.Name = "txtLogInUsername";
             this.txtLogInUsername.Size = new System.Drawing.Size(193, 20);
             this.txtLogInUsername.TabIndex = 1;
@@ -247,8 +253,10 @@ namespace VidTrack
             // 
             // Form1
             // 
+            this.AcceptButton = this.btnLogIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(544, 450);
             this.Controls.Add(this.pnlLogIn);
             this.Name = "Form1";

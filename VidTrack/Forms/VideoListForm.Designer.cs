@@ -50,6 +50,7 @@ namespace VidTrack.Forms
             this.btnNewVideo = new System.Windows.Forms.Button();
             this.btnEditVideo = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
@@ -62,7 +63,7 @@ namespace VidTrack.Forms
             // 
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblWelcome.Location = new System.Drawing.Point(19, 16);
+            this.lblWelcome.Location = new System.Drawing.Point(19, 17);
             this.lblWelcome.Name = "lblWelcome";
             this.lblWelcome.Size = new System.Drawing.Size(156, 39);
             this.lblWelcome.TabIndex = 0;
@@ -98,7 +99,7 @@ namespace VidTrack.Forms
             this.uploadedDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.videosBindingSource1;
             this.dataGridView1.GridColor = System.Drawing.Color.Gainsboro;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 115);
+            this.dataGridView1.Location = new System.Drawing.Point(26, 117);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -192,7 +193,7 @@ namespace VidTrack.Forms
             // 
             // btnNewVideo
             // 
-            this.btnNewVideo.Location = new System.Drawing.Point(728, 480);
+            this.btnNewVideo.Location = new System.Drawing.Point(728, 498);
             this.btnNewVideo.Name = "btnNewVideo";
             this.btnNewVideo.Size = new System.Drawing.Size(91, 26);
             this.btnNewVideo.TabIndex = 3;
@@ -202,7 +203,7 @@ namespace VidTrack.Forms
             // 
             // btnEditVideo
             // 
-            this.btnEditVideo.Location = new System.Drawing.Point(623, 480);
+            this.btnEditVideo.Location = new System.Drawing.Point(623, 498);
             this.btnEditVideo.Name = "btnEditVideo";
             this.btnEditVideo.Size = new System.Drawing.Size(91, 26);
             this.btnEditVideo.TabIndex = 4;
@@ -211,7 +212,7 @@ namespace VidTrack.Forms
             // 
             // btnLogOut
             // 
-            this.btnLogOut.Location = new System.Drawing.Point(26, 480);
+            this.btnLogOut.Location = new System.Drawing.Point(26, 498);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(91, 26);
             this.btnLogOut.TabIndex = 5;
@@ -219,11 +220,22 @@ namespace VidTrack.Forms
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(145, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Your videos...";
+            // 
             // VideoListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 535);
+            this.ClientSize = new System.Drawing.Size(844, 554);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnEditVideo);
             this.Controls.Add(this.btnNewVideo);
@@ -267,5 +279,6 @@ namespace VidTrack.Forms
         private System.Windows.Forms.Button btnNewVideo;
         private System.Windows.Forms.Button btnEditVideo;
         private System.Windows.Forms.Button btnLogOut;
+        private System.Windows.Forms.Label label1;
     }
 }

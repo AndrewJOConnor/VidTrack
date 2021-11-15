@@ -24,7 +24,8 @@ namespace VidTrack
             this.pnlLogIn.Location = new Point(
                 -449,
                 this.pnlLogIn.Location.Y
-            );  
+            );
+            this.AcceptButton = btnCreateAccount;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -33,11 +34,12 @@ namespace VidTrack
                 12,
                 this.pnlLogIn.Location.Y
             );
+            this.AcceptButton = btnLogIn;
         }
 
         private void btnCreateAccount_Click(object sender, EventArgs e)
         {
-            if (txtNewUsername.Text is null || txtNewPassword.Text is null || txtConfirmPassword is null || txtNewEmail is null)
+            if (txtNewUsername.Text == "" || txtNewPassword.Text == "" || txtConfirmPassword.Text == "" || txtNewEmail.Text == "")
             {
                 MessageBox.Show("Make sure you fill all text boxes.");
             }
