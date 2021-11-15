@@ -80,11 +80,6 @@ namespace VidTrack.Forms
             {
                 VideoDB.DeleteVideo(videoID);
             }
-            /*
-            else if (dialogResult == DialogResult.No)
-            {
-            }
-            */
 
             this.videosTableAdapter.FillByUserID(this.databaseDataSet.Videos, UserID);
         }
