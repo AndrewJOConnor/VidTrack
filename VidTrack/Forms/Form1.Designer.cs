@@ -73,13 +73,14 @@ namespace VidTrack
             this.pnlLogIn.Controls.Add(this.txtLogInUsername);
             this.pnlLogIn.Controls.Add(this.label2);
             this.pnlLogIn.Controls.Add(this.label1);
-            this.pnlLogIn.Location = new System.Drawing.Point(-449, 12);
+            this.pnlLogIn.Location = new System.Drawing.Point(12, 12);
             this.pnlLogIn.Name = "pnlLogIn";
             this.pnlLogIn.Size = new System.Drawing.Size(981, 426);
             this.pnlLogIn.TabIndex = 0;
             // 
             // btnCancel
             // 
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.Location = new System.Drawing.Point(653, 382);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(131, 23);

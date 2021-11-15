@@ -15,6 +15,8 @@ namespace VidTrack.Forms
     public partial class VideoDetails : Form
     {
         public int UserID { get; set; }
+        public Video video { get; set; }
+        public bool editing { get; set; }
 
         public VideoDetails()
         {
@@ -23,7 +25,18 @@ namespace VidTrack.Forms
 
         private void VideoDetails_Load(object sender, EventArgs e)
         {
-
+            if (editing == true)
+            {
+                txtTitle.Text = video.Title;
+                txtSeries.Text = video.Series;
+                txtEpisodeNumber.Text = video.Episode.ToString();
+                
+                if (video.Recorded == "Yes")      { chkRecorded.Checked      = true; } else { chkRecorded.Checked      = false; }
+                if (video.Edited == "Yes")        { chkEdited.Checked        = true; } else { chkEdited.Checked        = false; }
+                if (video.Rendered == "Yes")      { chkRendered.Checked      = true; } else { chkRendered.Checked      = false; }
+                if (video.ThumbnailMade == "Yes") { chkThumbnailMade.Checked = true; } else { chkThumbnailMade.Checked = false; }
+                if (video.Uploaded == "Yes")      { chkUploaded.Checked      = true; } else { chkUploaded.Checked      = false; }
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -33,27 +46,51 @@ namespace VidTrack.Forms
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            string title = txtTitle.Text;
-            string series = txtSeries.Text;
-            string episode = txtEpisodeNumber.Text;
-            bool recorded = chkRecorded.Checked;
-            bool edited = chkEdited.Checked;
-            bool rendered = chkRendered.Checked;
-            bool thumbnailMade = chkThumbnailMade.Checked;
-            bool uploaded = chkUploaded.Checked;
-            int userID = UserID;
-
-            Video video = new Video(title, series, episode, recorded, edited, rendered, thumbnailMade, uploaded, userID);
-            string newVideo = VideoDB.InsertVideo(video);
-
-            if (newVideo == "Video created!")
+            if (editing == false)
             {
-                this.Close();
+                string title = txtTitle.Text;
+                string series = txtSeries.Text;
+                string episode = txtEpisodeNumber.Text;
+                bool recorded = chkRecorded.Checked;
+                bool edited = chkEdited.Checked;
+                bool rendered = chkRendered.Checked;
+                bool thumbnailMade = chkThumbnailMade.Checked;
+                bool uploaded = chkUploaded.Checked;
+                int userID = UserID;
+
+                Video video = new Video(title, series, episode, recorded, edited, rendered, thumbnailMade, uploaded, userID);
+                string newVideo = VideoDB.InsertVideo(video);
+
+                if (newVideo == "Video created!")
+                {
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong");
+                }
             }
+            /*
             else
             {
-                MessageBox.Show("Something went wrong");
+                string title = txtTitle.Text;
+                string series = txtSeries.Text;
+                int episode = Convert.ToInt16(txtEpisodeNumber.Text);
+                string recorded;
+                string edited;
+                string rendered;
+                string thumbnailMade;
+                string uploaded;
+
+                if (chkRecorded.Checked)      { recorded      = "Yes"; } else { recorded      = "No"; }
+                if (chkEdited.Checked)        { edited        = "Yes"; } else { edited        = "No"; }
+                if (chkRendered.Checked)      { rendered      = "Yes"; } else { rendered      = "No"; }
+                if (chkThumbnailMade.Checked) { thumbnailMade = "Yes"; } else { thumbnailMade = "No"; }
+                if (chkUploaded.Checked)      { uploaded      = "Yes"; } else { uploaded      = "No"; }
+
+                VideoDB.UpdateVideo(video.VideoID, title, series, episode, recorded, edited, rendered, thumbnailMade, uploaded);
             }
+            */
         }
     }
 }

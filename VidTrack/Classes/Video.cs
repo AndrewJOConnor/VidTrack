@@ -76,5 +76,29 @@ namespace VidTrack.Classes
                 Uploaded = "Yes";
             }
         }
+
+
+
+        // This is the version of the constructor used by the "GetVideoByID" Method of the VideoDB class.
+        public Video(
+            string title,
+            string series,
+            int episode,
+            string recorded,
+            string edited,
+            string rendered,
+            string thumbnailMade,
+            string uploaded
+        )
+        {
+            Title = title;
+            Series = series;
+            Episode = Convert.ToInt16(episode);
+            Recorded = recorded;
+            Edited = edited;
+            Rendered = rendered;
+            ThumbnailMade = thumbnailMade;
+            Uploaded = uploaded;
+        }
     }
 }

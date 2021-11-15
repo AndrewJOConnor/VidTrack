@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VidTrack.Data;
+using VidTrack.Classes;
 
 
 namespace VidTrack.Forms
@@ -16,6 +17,7 @@ namespace VidTrack.Forms
     {
         public string CurrentUser { get; set; }
         public int UserID { get; set; }
+        public Video selectedVideo { get; set; }
 
         public VideoListForm()
         {
@@ -38,6 +40,7 @@ namespace VidTrack.Forms
         {
             var newVidWindow = new Forms.VideoDetails();
             newVidWindow.UserID = UserID;
+            newVidWindow.editing = false;
             newVidWindow.ShowDialog();
             this.videosTableAdapter.FillByUserID(this.databaseDataSet.Videos, UserID);
         }
@@ -47,6 +50,23 @@ namespace VidTrack.Forms
             Form logInWindow = new Form1();
             logInWindow.Show();
             this.Close();
+        }
+
+        private void btnEditVideo_Click(object sender, EventArgs e)
+        {
+            int videoID = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+
+            // This was for debugging purposes.
+            //lblWelcome.Text = videoID.ToString();
+
+            selectedVideo = VideoDB.GetVideoByID(videoID);
+
+            var newVidWindow = new Forms.VideoDetails();
+            newVidWindow.UserID = UserID;
+            newVidWindow.video = selectedVideo;
+            newVidWindow.editing = true;
+            newVidWindow.ShowDialog();
+            this.videosTableAdapter.FillByUserID(this.databaseDataSet.Videos, UserID);
         }
     }
 }
