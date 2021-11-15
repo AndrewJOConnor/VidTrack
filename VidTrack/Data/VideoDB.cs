@@ -172,31 +172,70 @@ namespace VidTrack.Data
 
         //---- UPDATE VIDEO BY ID ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        public static void UpdateVideo(int vidID, string vidTitle, string vidSeriesName, int vidEpisodeNumber, string vidRecorded, string vidEdited, string vidRendered, string vidThumbnailMade, string vidUploaded)
+        public static string UpdateVideo(int id, string title, string series, int episode, string recorded, string edited, string rendered, string thumbnailMade, string uploaded)
         {
             string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\wammy\source\repos\VidTrack\VidTrack\Data\Database.mdf;Integrated Security=True";
             SqlConnection connection = new SqlConnection(conString);
             SqlCommand command;
 
-            string sqlStatement = "UPDATE Videos " +
-                                  "SET title = @vidTitle, seriesName = @vidSeriesName, episodeNumber = @vidEpisodeNumber, " +
-                                  "recorded = @vidRecorded, edited = @vidEdited, rendered = @vidRendered, " +
-                                  "thumbnailMade = @vidThumbnailMade, uploaded = @vidUploaded " +
-                                  "WHERE vidID = @vidID";
+            string sqlStatement = "UPDATE Videos SET title = @vidTitle, seriesName = @vidSeriesName, episodeNumber = @vidEpisodeNumber, recorded = @vidRecorded, edited = @vidEdited, rendered = @vidRendered, thumbnailMade = @vidThumbnailMade, uploaded = @vidUploaded WHERE vidID = @vidID";
+
+            try
+            {
+                connection.Open();
+                command = new SqlCommand(sqlStatement, connection);
+                command.Parameters.AddWithValue("@vidID", id);
+                command.Parameters.AddWithValue("@vidTitle", title);
+                command.Parameters.AddWithValue("@vidSeriesName", series);
+                command.Parameters.AddWithValue("@vidEpisodeNumber", episode);
+                command.Parameters.AddWithValue("@vidRecorded", recorded);
+                command.Parameters.AddWithValue("@vidEdited", edited);
+                command.Parameters.AddWithValue("@vidRendered", rendered);
+                command.Parameters.AddWithValue("@vidThumbnailMade", thumbnailMade);
+                command.Parameters.AddWithValue("@vidUploaded", uploaded);
+
+                command.CommandType = CommandType.Text;
+
+                var result = command.ExecuteNonQuery();
+
+                return "Video Updated.";
+            }
+            catch (SqlException SqlError)
+            {
+                throw SqlError;
+            }
+            catch (Exception error)
+            {
+                throw error;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+        //---- DELETE VIDEO BY ID ---------------------------------------------------------------------------------------------------------------------------------------------------------
+        
+        public static void DeleteVideo(int vidID)
+        {
+            string conString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\wammy\source\repos\VidTrack\VidTrack\Data\Database.mdf;Integrated Security=True";
+            SqlConnection connection = new SqlConnection(conString);
+            SqlCommand command;
+
+            string sqlStatement = "DELETE FROM Videos WHERE vidID = @vidID";
 
             try
             {
                 connection.Open();
                 command = new SqlCommand(sqlStatement, connection);
                 command.Parameters.AddWithValue("@vidID", vidID);
-                command.Parameters.AddWithValue("@vidTitle", vidTitle);
-                command.Parameters.AddWithValue("@vidSeriesName", vidSeriesName);
-                command.Parameters.AddWithValue("@vidEpisodeNumber", vidEpisodeNumber);
-                command.Parameters.AddWithValue("@vidRecorded", vidRecorded);
-                command.Parameters.AddWithValue("@vidEdited", vidEdited);
-                command.Parameters.AddWithValue("@vidRendered", vidRendered);
-                command.Parameters.AddWithValue("@vidThumbnailMade", vidThumbnailMade);
-                command.Parameters.AddWithValue("@vidUploaded", vidUploaded);
 
                 command.CommandType = CommandType.Text;
 
@@ -215,9 +254,8 @@ namespace VidTrack.Data
                 connection.Close();
             }
         }
-
+        
         //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
     }
 }
 

@@ -57,13 +57,14 @@ namespace VidTrack.Forms
             int videoID = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
 
             // This was for debugging purposes.
-            //lblWelcome.Text = videoID.ToString();
+            // lblWelcome.Text = videoID.ToString();
 
             selectedVideo = VideoDB.GetVideoByID(videoID);
 
             var newVidWindow = new Forms.VideoDetails();
             newVidWindow.UserID = UserID;
             newVidWindow.video = selectedVideo;
+            newVidWindow.video.VideoID = videoID;
             newVidWindow.editing = true;
             newVidWindow.ShowDialog();
             this.videosTableAdapter.FillByUserID(this.databaseDataSet.Videos, UserID);

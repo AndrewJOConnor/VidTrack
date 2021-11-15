@@ -27,8 +27,8 @@ namespace VidTrack.Forms
         {
             if (editing == true)
             {
-                txtTitle.Text = video.Title;
-                txtSeries.Text = video.Series;
+                txtTitle.Text = video.Title.Trim();
+                txtSeries.Text = video.Series.Trim();
                 txtEpisodeNumber.Text = video.Episode.ToString();
                 
                 if (video.Recorded == "Yes")      { chkRecorded.Checked      = true; } else { chkRecorded.Checked      = false; }
@@ -70,7 +70,6 @@ namespace VidTrack.Forms
                     MessageBox.Show("Something went wrong");
                 }
             }
-            /*
             else
             {
                 string title = txtTitle.Text;
@@ -88,9 +87,19 @@ namespace VidTrack.Forms
                 if (chkThumbnailMade.Checked) { thumbnailMade = "Yes"; } else { thumbnailMade = "No"; }
                 if (chkUploaded.Checked)      { uploaded      = "Yes"; } else { uploaded      = "No"; }
 
-                VideoDB.UpdateVideo(video.VideoID, title, series, episode, recorded, edited, rendered, thumbnailMade, uploaded);
+                string updateVideo = VideoDB.UpdateVideo(video.VideoID, title, series, episode, recorded, edited, rendered, thumbnailMade, uploaded);
+
+                if (updateVideo == "Video Updated.")
+                {
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong.");
+                }
+
+                this.Close();
             }
-            */
         }
     }
 }
