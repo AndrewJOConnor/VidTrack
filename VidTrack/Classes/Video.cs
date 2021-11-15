@@ -37,7 +37,7 @@ namespace VidTrack.Classes
         {
             Title = title;
             Series = series;
-            Episode = Convert.ToInt16(episode);
+            if (episode != null && episode != "") { Episode = Convert.ToInt16(episode); } else { Episode = 0; }
 
             Recorded = "No";
             Edited = "No";

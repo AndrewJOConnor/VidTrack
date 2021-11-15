@@ -69,5 +69,24 @@ namespace VidTrack.Forms
             newVidWindow.ShowDialog();
             this.videosTableAdapter.FillByUserID(this.databaseDataSet.Videos, UserID);
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int videoID = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
+            string videoName = (string)dataGridView1.SelectedRows[0].Cells[1].Value;
+
+            DialogResult dialogResult = MessageBox.Show("Are you sure you want to delete \"" + videoName.Trim() + "\"?", "Confirm", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                VideoDB.DeleteVideo(videoID);
+            }
+            /*
+            else if (dialogResult == DialogResult.No)
+            {
+            }
+            */
+
+            this.videosTableAdapter.FillByUserID(this.databaseDataSet.Videos, UserID);
+        }
     }
 }

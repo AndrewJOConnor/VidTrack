@@ -52,6 +52,7 @@ namespace VidTrack.Forms
             this.renderedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.thumbnailMadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uploadedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.videosBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
@@ -145,22 +146,24 @@ namespace VidTrack.Forms
             // 
             // btnNewVideo
             // 
+            this.btnNewVideo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnNewVideo.Location = new System.Drawing.Point(728, 498);
             this.btnNewVideo.Name = "btnNewVideo";
             this.btnNewVideo.Size = new System.Drawing.Size(91, 26);
             this.btnNewVideo.TabIndex = 3;
             this.btnNewVideo.Text = "New...";
-            this.btnNewVideo.UseVisualStyleBackColor = true;
+            this.btnNewVideo.UseVisualStyleBackColor = false;
             this.btnNewVideo.Click += new System.EventHandler(this.btnNewVideo_Click);
             // 
             // btnEditVideo
             // 
+            this.btnEditVideo.BackColor = System.Drawing.Color.Aqua;
             this.btnEditVideo.Location = new System.Drawing.Point(623, 498);
             this.btnEditVideo.Name = "btnEditVideo";
             this.btnEditVideo.Size = new System.Drawing.Size(91, 26);
             this.btnEditVideo.TabIndex = 4;
             this.btnEditVideo.Text = "Edit...";
-            this.btnEditVideo.UseVisualStyleBackColor = true;
+            this.btnEditVideo.UseVisualStyleBackColor = false;
             this.btnEditVideo.Click += new System.EventHandler(this.btnEditVideo_Click);
             // 
             // btnLogOut
@@ -241,11 +244,23 @@ namespace VidTrack.Forms
             this.uploadedDataGridViewTextBoxColumn.Name = "uploadedDataGridViewTextBoxColumn";
             this.uploadedDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnDelete.Location = new System.Drawing.Point(516, 498);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(91, 26);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // VideoListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 554);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnLogOut);
             this.Controls.Add(this.btnEditVideo);
@@ -292,5 +307,6 @@ namespace VidTrack.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn renderedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn thumbnailMadeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn uploadedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
