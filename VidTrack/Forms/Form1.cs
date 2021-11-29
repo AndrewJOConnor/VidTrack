@@ -54,16 +54,27 @@ namespace VidTrack
                     string accountType = "User";
                     Account account = new Account(username, password, email, accountType);
 
-                    string inserted = AccountDB.InsertAccount(account);
+                    bool accountExists = AccountDB.CheckForAccount(username);
 
-                    if (inserted == "Account created!")
+                    if (accountExists == false)
                     {
-                        MessageBox.Show(inserted);
-                    } else
-                    {
-                        // MessageBox.Show(account.Username + "\n" + account.Password + "\n" + account.AccountType + "\n" + account.Email);
-                        MessageBox.Show(inserted);
+                        string inserted = AccountDB.InsertAccount(account);
+
+                        if (inserted == "Account created!")
+                        {
+                            MessageBox.Show(inserted);
+                        }
+                        else
+                        {
+                            // MessageBox.Show(account.Username + "\n" + account.Password + "\n" + account.AccountType + "\n" + account.Email);
+                            MessageBox.Show(inserted);
+                        }
                     }
+                    else
+                    {
+                        MessageBox.Show("That username is taken; try a different one.");
+                    }
+
                 }
                 // If the passwords do NOT match...
                 else
