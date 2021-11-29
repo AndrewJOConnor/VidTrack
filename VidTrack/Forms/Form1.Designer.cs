@@ -73,32 +73,34 @@ namespace VidTrack
             this.pnlLogIn.Controls.Add(this.txtLogInUsername);
             this.pnlLogIn.Controls.Add(this.label2);
             this.pnlLogIn.Controls.Add(this.label1);
-            this.pnlLogIn.Location = new System.Drawing.Point(-449, 12);
+            this.pnlLogIn.Location = new System.Drawing.Point(12, 12);
             this.pnlLogIn.Name = "pnlLogIn";
             this.pnlLogIn.Size = new System.Drawing.Size(981, 426);
             this.pnlLogIn.TabIndex = 0;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(653, 372);
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancel.Location = new System.Drawing.Point(653, 382);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(131, 23);
-            this.btnCancel.TabIndex = 27;
+            this.btnCancel.TabIndex = 24;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtNewEmail
             // 
-            this.txtNewEmail.Location = new System.Drawing.Point(622, 282);
+            this.txtNewEmail.Location = new System.Drawing.Point(622, 287);
+            this.txtNewEmail.MaxLength = 100;
             this.txtNewEmail.Name = "txtNewEmail";
             this.txtNewEmail.Size = new System.Drawing.Size(193, 20);
-            this.txtNewEmail.TabIndex = 26;
+            this.txtNewEmail.TabIndex = 22;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(619, 266);
+            this.label8.Location = new System.Drawing.Point(619, 271);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(72, 13);
             this.label8.TabIndex = 25;
@@ -106,17 +108,18 @@ namespace VidTrack
             // 
             // txtConfirmPassword
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(622, 209);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(622, 223);
+            this.txtConfirmPassword.MaxLength = 50;
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '•';
             this.txtConfirmPassword.Size = new System.Drawing.Size(193, 20);
-            this.txtConfirmPassword.TabIndex = 24;
+            this.txtConfirmPassword.TabIndex = 21;
             this.txtConfirmPassword.UseSystemPasswordChar = true;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(620, 193);
+            this.label7.Location = new System.Drawing.Point(620, 207);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 13);
             this.label7.TabIndex = 23;
@@ -124,10 +127,10 @@ namespace VidTrack
             // 
             // btnCreateAccount
             // 
-            this.btnCreateAccount.Location = new System.Drawing.Point(653, 328);
+            this.btnCreateAccount.Location = new System.Drawing.Point(653, 338);
             this.btnCreateAccount.Name = "btnCreateAccount";
             this.btnCreateAccount.Size = new System.Drawing.Size(131, 23);
-            this.btnCreateAccount.TabIndex = 22;
+            this.btnCreateAccount.TabIndex = 23;
             this.btnCreateAccount.Text = "Create Account";
             this.btnCreateAccount.UseVisualStyleBackColor = true;
             this.btnCreateAccount.Click += new System.EventHandler(this.btnCreateAccount_Click);
@@ -135,16 +138,17 @@ namespace VidTrack
             // label4
             // 
             this.label4.Font = new System.Drawing.Font("Agency FB", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(461, 0);
+            this.label4.Location = new System.Drawing.Point(461, 16);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(514, 69);
+            this.label4.Size = new System.Drawing.Size(517, 69);
             this.label4.TabIndex = 21;
             this.label4.Text = "Sign up";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtNewPassword
             // 
-            this.txtNewPassword.Location = new System.Drawing.Point(622, 157);
+            this.txtNewPassword.Location = new System.Drawing.Point(622, 171);
+            this.txtNewPassword.MaxLength = 50;
             this.txtNewPassword.Name = "txtNewPassword";
             this.txtNewPassword.PasswordChar = '•';
             this.txtNewPassword.Size = new System.Drawing.Size(193, 20);
@@ -153,7 +157,8 @@ namespace VidTrack
             // 
             // txtNewUsername
             // 
-            this.txtNewUsername.Location = new System.Drawing.Point(622, 108);
+            this.txtNewUsername.Location = new System.Drawing.Point(622, 122);
+            this.txtNewUsername.MaxLength = 40;
             this.txtNewUsername.Name = "txtNewUsername";
             this.txtNewUsername.Size = new System.Drawing.Size(193, 20);
             this.txtNewUsername.TabIndex = 19;
@@ -161,7 +166,7 @@ namespace VidTrack
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(619, 141);
+            this.label5.Location = new System.Drawing.Point(619, 155);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 18;
@@ -170,7 +175,7 @@ namespace VidTrack
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(619, 92);
+            this.label6.Location = new System.Drawing.Point(619, 106);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 17;
@@ -181,7 +186,7 @@ namespace VidTrack
             this.btnRegister.Location = new System.Drawing.Point(192, 317);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(131, 23);
-            this.btnRegister.TabIndex = 6;
+            this.btnRegister.TabIndex = 4;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
@@ -191,16 +196,17 @@ namespace VidTrack
             this.btnLogIn.Location = new System.Drawing.Point(192, 250);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(131, 23);
-            this.btnLogIn.TabIndex = 5;
+            this.btnLogIn.TabIndex = 3;
             this.btnLogIn.Text = "Log In";
             this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Agency FB", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(3, 16);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(514, 69);
+            this.label3.Size = new System.Drawing.Size(517, 69);
             this.label3.TabIndex = 4;
             this.label3.Text = "Welcome to VidTrack!";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -208,18 +214,20 @@ namespace VidTrack
             // txtLogInPassword
             // 
             this.txtLogInPassword.Location = new System.Drawing.Point(161, 205);
+            this.txtLogInPassword.MaxLength = 50;
             this.txtLogInPassword.Name = "txtLogInPassword";
             this.txtLogInPassword.PasswordChar = '•';
             this.txtLogInPassword.Size = new System.Drawing.Size(193, 20);
-            this.txtLogInPassword.TabIndex = 3;
+            this.txtLogInPassword.TabIndex = 2;
             this.txtLogInPassword.UseSystemPasswordChar = true;
             // 
             // txtLogInUsername
             // 
             this.txtLogInUsername.Location = new System.Drawing.Point(161, 156);
+            this.txtLogInUsername.MaxLength = 40;
             this.txtLogInUsername.Name = "txtLogInUsername";
             this.txtLogInUsername.Size = new System.Drawing.Size(193, 20);
-            this.txtLogInUsername.TabIndex = 2;
+            this.txtLogInUsername.TabIndex = 1;
             // 
             // label2
             // 
@@ -246,13 +254,15 @@ namespace VidTrack
             // 
             // Form1
             // 
+            this.AcceptButton = this.btnLogIn;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(544, 450);
             this.Controls.Add(this.pnlLogIn);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Welcome!";
             this.pnlLogIn.ResumeLayout(false);
             this.pnlLogIn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
